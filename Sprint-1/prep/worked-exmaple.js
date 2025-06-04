@@ -11,7 +11,7 @@ function replaceChars(str) {
     counts[char] = (counts[char] || 0) + 1;
   }
 
-  // Replace repeated characters with 'a', keep unique as is
+  // Replace repeated characters with '*', keep unique with '1'
   let result = "";
   for (const char of lowerStr) {
     if (counts[char] > 1) {
