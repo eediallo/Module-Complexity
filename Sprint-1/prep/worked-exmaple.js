@@ -4,16 +4,16 @@ function replaceUniqueChars(word) {
 }
 
 function duplicateEncode(word) {
-  const lowerword = word.toLowerCase();
+  const lowerWord = word.toLowerCase();
   // Count occurrences of each character
   const counts = {};
-  for (const char of lowerword) {
+  for (const char of lowerWord) {
     counts[char] = (counts[char] || 0) + 1;
   }
 
   // Replace repeated characters with '*', keep unique with '1'
   let result = "";
-  for (const char of lowerword) {
+  for (const char of lowerWord) {
     if (counts[char] > 1) {
       result += "*";
     } else {
