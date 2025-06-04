@@ -1,19 +1,19 @@
-function replaceUniqueChars(str) {
-  const uniqChars = Array.from(new Set(str)).join("");
+function replaceUniqueChars(word) {
+  const uniqChars = Array.from(new Set(word)).join("");
   return uniqChars.replaceAll(/./g, "~");
 }
 
-function replaceChars(str) {
-  const lowerStr = str.toLowerCase();
+function duplicateEncode(word) {
+  const lowerword = word.toLowerCase();
   // Count occurrences of each character
   const counts = {};
-  for (const char of lowerStr) {
+  for (const char of lowerword) {
     counts[char] = (counts[char] || 0) + 1;
   }
 
   // Replace repeated characters with '*', keep unique with '1'
   let result = "";
-  for (const char of lowerStr) {
+  for (const char of lowerword) {
     if (counts[char] > 1) {
       result += "*";
     } else {
@@ -24,6 +24,21 @@ function replaceChars(str) {
   return result;
 }
 
-console.log(replaceChars("recede"));
-console.log(replaceChars("Success"));
-console.log(replaceChars("11*2"));
+function duplicateEncode(word) {
+  let result = "";
+
+  for (const char of word) {
+    const lowerCaseChar = char.toLowerCase();
+    if (word.indexOf(lowerCaseChar) === word.lastIndexOf(lowerCaseChar)) {
+      result += "1";
+    } else {
+      result += "*";
+    }
+  }
+
+  return result;
+}
+
+console.log(duplicateEncode("recede"));
+console.log(duplicateEncode("Success"));
+console.log(duplicateEncode("11*2"));
