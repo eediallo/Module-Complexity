@@ -8,7 +8,3 @@ def count_letters(s: str) -> int:
     # Only count uppercase letters that do not have a lowercase version in the string
     only_upper = {c for c in upper_set if c.lower() not in lower_set}
     return len(only_upper)
-
-
-def is_upper_case(letter: str) -> str:
-    return letter.upper()
